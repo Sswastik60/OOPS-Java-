@@ -18,13 +18,11 @@ public class Player {
 
 class Firewood {
     int warmth =20;
-
     void use(Player p){
         System.out.println("Player used Firewood!");
         p.health=p.health + warmth;
     }
-
-    
+   
 }
 
 public class Game {
@@ -44,5 +42,7 @@ public class Game {
 
         System.out.println("You feel weak,The room is cold.\nYour body remembers hunger… and thirst.\nSomething lies nearby.");
 
+        System.out.println("You see a firewood lying nearby!");
+        warmth warmth1 = new Firewood();
     }
 }
