@@ -17,7 +17,6 @@ class Player {
         System.out.println("Stamina:"+stamina);
         System.out.println("Warmth:"+warmth);
     }
-
 }
 
 class Firewood {
@@ -27,7 +26,6 @@ class Firewood {
         p.warmth=p.warmth + warmth;
         p.displayStatus();
     }
-   
 }
 
 class Food {
@@ -37,7 +35,6 @@ class Food {
         p.hunger=p.hunger - Food;
         p.displayStatus();
     }
-   
 }
 
 public class Game {
