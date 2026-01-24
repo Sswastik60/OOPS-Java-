@@ -9,7 +9,7 @@ public class Secondgate{
         
         int node = 0;
         int powersum=0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 10; i++) {
             int power = (seed + i*i) %10;
             powersum+=power;
             node++;
