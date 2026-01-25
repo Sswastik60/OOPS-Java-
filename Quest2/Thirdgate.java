@@ -3,20 +3,25 @@ import java.util.Scanner;
 
 public class Thirdgate {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         int seed = sc.nextInt();
         int cameras = sc.nextInt();
         int faultycameras = 0;
+        
         for (int i = 1; i <= cameras; i++) {
-            float error = ((seed )%(i+1))/100.00f;
-            if (error>0.2) {
+            float error = (seed % (i + 1)) / 100.0f;
+            if (error > 0.2f) {
+                if (faultycameras == 0) {
+                    System.out.println("FAULTY CAMERAS");
+                }
+                System.out.println(i);
                 faultycameras++;
             }
         }
-        if (faultycameras>0) {
-            System.out.println("FAULTY CAMERAS:\n"+faultycameras);
+        if (faultycameras == 0) {
+            System.out.println("ALL CAMERAS STABLE");
         }
-        else System.out.println("ALL CAMERAS STABLE");
+        sc.close();
     }
 }
-//as per the formula given in the gate 3 question error doesnt exceed 0.2 so ig the expected output is a typo or misprint

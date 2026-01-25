@@ -7,20 +7,24 @@ public class Fifthgate {
         Scanner sc = new Scanner(System.in);
         int seed = sc.nextInt();
         int events = sc.nextInt();
-        int avg=
-        for (int i = 0; i < events; i++) {
+        int sum=0;
+        for (int i = 1; i <= events; i++) {
             int severity = (seed * i + 7) % 10;
-            if (severity>=6) {
+            sum+=severity;
+            if (severity>=9) {
+                System.out.println("LOCKDOWN AT EVENT "+ i);  
+                break;
+            }
+            else if ((sum/events)>=6 && i==events) {
                 System.out.println("CONTAINMENT");
                 break;
             }
-            else if (severity>=9) {
-                System.out.println("LOCKDOWN AT EVENT "+ i);
-            }
-            else{
+            else if (i==events){
                 System.out.println("RELEASE");
+                break;
             }
         }
+        sc.close();
 
     }
 }

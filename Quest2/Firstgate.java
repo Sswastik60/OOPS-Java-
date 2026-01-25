@@ -24,6 +24,6 @@ public class Firstgate {
         sc.close();
     }
 }
-//Did not know what a set bit is so had to google and found out that it is the no of 1s in the binary form of a number
+//Set bits are the no of 1s in the binary form of a number
 // so created a copy of the start number which helps count the number of digits
 

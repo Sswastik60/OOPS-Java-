@@ -6,11 +6,24 @@ public class Fourthgate {
         Scanner sc = new Scanner(System.in);
         int p = sc.nextInt();
         int k=0;
-        if ((p&1)==1) {
-            p=3*p+1;
-        }else{
-            p=p/2;
+        while (p!=1) {
+            if (p%2==0) {
+                p=p/2;
+                k++;
+                System.out.println(p);
+            }
+            else if (p%2!=0){
+                p=3*p+1;
+                k++;
+                System.out.println(p);
+            }
+            else{
+                
+                System.out.println("Trapped in loop at "+p);
+                break;
+            }
         }
-        System.out.println(p);
+        System.out.println("Escaped in "+k+" steps");
+        sc.close();
     }
 }

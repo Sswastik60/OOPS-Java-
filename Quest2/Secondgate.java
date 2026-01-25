@@ -13,7 +13,7 @@ public class Secondgate{
             int power = (seed + i*i) %10;
             powersum+=power;
             node++;
-            if ((power%7)==0) {
+            if ((powersum%7)==0) {
                 break;
             }
         }
@@ -23,5 +23,5 @@ public class Secondgate{
         sc.close();
     }
 } 
-//just did what is told in the question and got the expected output
+
     
