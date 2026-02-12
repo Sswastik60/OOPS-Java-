@@ -1,4 +1,4 @@
-package Java_practice.OOPS.Quest2;
+package Quest2;
 
 import java.util.Scanner;
 

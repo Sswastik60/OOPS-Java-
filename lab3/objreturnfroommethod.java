@@ -1,4 +1,4 @@
-package Java_practice.OOPS.lab3;
+package lab3;
 
 public class objreturnfroommethod {
 
@@ -22,3 +22,4 @@ public class objreturnfroommethod {
     }
 }
 //pass an object to a method and return an object from the method uses pass by reference due to which any change changes the real values also(PASS BY REFERENCE)
+//in the constructors concept this.(variable) = (variable) using this we can change the default values of a class

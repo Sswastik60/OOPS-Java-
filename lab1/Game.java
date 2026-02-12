@@ -1,4 +1,4 @@
-package Java_practice.OOPS.lab1;
+package lab1;
 import java.util.Scanner;
 
 class Player {
