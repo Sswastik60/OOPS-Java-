@@ -8,6 +8,7 @@ abstract class character{//now we cannot create objects of this abstract class.
 
 class mage extends character{
     int magicpower;
+    @Override // (not mandatory but used to make the code more reliable)it doesnt matter even if we dont use it bbut if we still write it to make sure the function operates correctly
     void attack(character c){
         System.out.println("Abracadabra");
     }
@@ -32,6 +33,9 @@ public class inheritance2 {
         hero.attack(villain);
         villain.attack(hero);
         ((mage)villain).castspell(hero);//this will be not allowed
+        if (hero instanceof knight) {
+            System.out.println("hero instance of knight");
+        }
         //for cast spell to work we have to use EXPLICIT CONVERSION TO THE MAGE TYPE
         //runtime error ((mage)hero).castspell(villain); hero of type knight
         
