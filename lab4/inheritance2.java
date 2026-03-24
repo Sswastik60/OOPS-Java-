@@ -5,9 +5,11 @@ abstract class character{//now we cannot create objects of this abstract class.
     }
     
 }
+//child can call father not grandfather branch to access grand father from the child class we have to call it step wise
 
 class mage extends character{
     int magicpower;
+    String n = super.name;//to access data from the super class similarily any methods or functions can also be called including the static variables also using the super.() 
     @Override // (not mandatory but used to make the code more reliable)it doesnt matter even if we dont use it bbut if we still write it to make sure the function operates correctly
     void attack(character c){
         System.out.println("Abracadabra");
