@@ -1,3 +1,4 @@
+package Inheritance;
 abstract class character{//now we cannot create objects of this abstract class.
     String name;
     void attack(character c){

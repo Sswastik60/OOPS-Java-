@@ -1,0 +1,4 @@
+keyword "final" used to finalise a method which cant be overriden from the child classes.
+"abstract" class we can create a type but not an object,
+if default constructor in parent and child calls it then it will run but it doesnt work the if parent has a parameterized constructor.
+can be called  using super("Name") inside the child class and always call this first in the child class to avoid errors.

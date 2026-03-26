@@ -1,0 +1,7 @@
+Basics of String Handling using String and StringBuffer classes:
+ String objects are immutable
+
+ "companion class" to String called 
+"StringBuffer", whose objects contain strings that can be modified after they are created.
+
+Striing rev = new StringBuilder

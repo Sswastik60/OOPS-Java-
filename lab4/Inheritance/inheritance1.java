@@ -1,3 +1,4 @@
+package Inheritance;
 class Student{
     protected double total;
     String name;
@@ -31,6 +32,7 @@ class Sciencestudent extends Student {
 }
 
 class Artstudent extends Student {
+    
     Artstudent(String name,double a,double b,double c,String sub){
         super(name,a,b,c);
     }
@@ -45,6 +47,7 @@ public class inheritance1 {
 
     public static void main(String[] args) {
         Student[] students = new Student[5];
+        
         students[0]=new Sciencestudent("Swastik", 0, 0, 0);//this can be used to assign a particular function to a subclass or child class
         Student s1;//this happens in the stack memory
         s1 = new Sciencestudent(null, 0, 0, 0);//constructor without parameter then the super class constructor will be called if no parameter was given in the constructor
