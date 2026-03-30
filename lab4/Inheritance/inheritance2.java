@@ -15,7 +15,7 @@ abstract class character{//now we cannot create objects of this abstract class.
 
 interface flyable{
     int max_ht=100000; //final keyword it becomes a constant and we cant change the value (will be public, static and final)
-
+    // void jump();//this becomes an abstract class
     default void fly(){
 
     }
@@ -53,6 +53,12 @@ class knight extends character{
         System.out.println("Thunder bolt");
     }
 }
+class Render{
+
+    void Renderflight(flyable x){
+
+    }//now we can directly use this method for all the objects with flyable interface as its type  
+}
 
 public class inheritance2 {
     public static void main(String[] args) {
@@ -65,6 +71,11 @@ public class inheritance2 {
         if (hero instanceof knight) {
             System.out.println("hero instance of knight");
         }
+        flyable a = new mage();
+        flyable b = new mage();
+        b.fly();
+        a.fly();//calls mages fly
+        // a.attack();this wont work cause flyable doesnt have a attack method.
         //for cast spell to work we have to use EXPLICIT CONVERSION TO THE MAGE TYPE
         //runtime error ((mage)hero).castspell(villain); hero of type knight
         
