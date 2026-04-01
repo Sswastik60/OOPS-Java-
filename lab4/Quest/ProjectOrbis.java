@@ -2,20 +2,52 @@ package Quest;
 //Main ENVIRONMENT
 abstract class Environment {
     String name;
-    abstract void affect(Entities e);
+    // abstract void affect(Entities e);
 }
 
-abstract class Entities extends Environment implements Swimming,Burnable,Move,Fly,Attack,takeDamage,Heal{
+abstract class Entities extends Environment implements Move,Attack,takeDamage{
     int health = 100;
 }
+
+class Knight extends Entities{
+    @Override
+    public void move(){
+        System.out.println("The Knight is moving");
+    }
+    @Override
+    public void attack() {
+        System.out.println("The Knight attacks ");
+    }
+    @Override
+    public void takedamage() {
+        System.out.println("The Knight was attacked");
+    }
+}
+
+class Archer extends Entities{
+    @Override
+    public void move(){
+        System.out.println("The Archer is moving");
+    }
+    @Override
+    public void attack() {
+        System.out.println("The Archer attacks ");
+    }
+    @Override
+    public void takedamage() {
+        System.out.println("The Archer was attacked");
+    }
+
+}
+    
 
  
 //different interfaces / features
 interface Swimming{
-    boolean swimming();
+    void swimming();
 }
 interface Burnable{
-    boolean burnable();
+    void burnable();
 }
 interface Move{
     void move();
@@ -35,31 +67,33 @@ interface Heal{
 
 
 //differnt regions
-class WaterRegion extends Environment{
+// class WaterRegion extends Environment{
 
-    @Override
-    void affect(Entities e) {
-        // TODO Auto-generated method stub
-        if (e.swimming()){
-            System.out.println("The entity is swimming =>he survies the water region");
-        }else{
-            e.health-=10;
-        }
-    }
+//     @Override
+//     void affect(Entities e) {
+//         // TODO Auto-generated method stub
+//         if (e.swimming()){
+//             System.out.println("The entity is swimming =>he survies the water region");
+//         }else{
+//             e.takedamage();
+//         }
+//     }
     
-}
+// }
 
-class FireRegion extends Environment{
+// class FireRegion extends Environment{
 
-    @Override
-    void affect(Entities e) {
-        // TODO Auto-generated method stub
-        if (e.burnable()) {
-            System.out.println("The entity has a burnable =>he survives the fire region");
-        }
-    }
+//     @Override
+//     void affect(Entities e) {
+//         // TODO Auto-generated method stub
+//         if (e.burnable()) {
+//             System.out.println("The entity has a burnable =>he survives the fire region");
+//         }else{
+//             e.takedamage();
+//         }
+//     }
     
-}
+// }
 
 //main class
 public class ProjectOrbis {
