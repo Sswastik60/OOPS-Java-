@@ -9,7 +9,32 @@ abstract class Entities extends Environment implements Move,Attack,takeDamage{
     int health = 100;
 }
 
-class Knight extends Entities{
+class Knight extends Entities implements Swimming,displayStats{
+    int swim_check=0;
+    @Override
+    public void display_Stats(){
+        System.out.println("Character type :Knight");
+        System.out.println("Health :"+health);
+    }
+    @Override
+    public void swimming(){
+        System.out.println("Knight is swimming");
+        swim_check=1;
+    }
+    @Override
+    public void takedamage(){
+        if (swim_check!=1) {
+            health-=100; 
+            System.out.println("The knight drowned"); 
+        } 
+            
+    }
+
+    void condition_check(){
+        if (swim_check!=1) {
+            takedamage();
+        }
+    }
     @Override
     public void move(){
         System.out.println("The Knight is moving");
@@ -18,10 +43,7 @@ class Knight extends Entities{
     public void attack() {
         System.out.println("The Knight attacks ");
     }
-    @Override
-    public void takedamage() {
-        System.out.println("The Knight was attacked");
-    }
+    
 }
 
 class Archer extends Entities{
@@ -43,6 +65,9 @@ class Archer extends Entities{
 
  
 //different interfaces / features
+interface displayStats{
+    void display_Stats();
+}
 interface Swimming{
     void swimming();
 }
@@ -97,5 +122,13 @@ interface Heal{
 
 //main class
 public class ProjectOrbis {
+    public static void main(String[] args) {
+    Knight Steve = new Knight();
+    Steve.move();
+    // Steve.swimming();
+    Steve.condition_check();
+    Steve.display_Stats();
+    }
     
+
 }
