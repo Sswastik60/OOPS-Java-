@@ -1,0 +1,163 @@
+# Quest: Project Orbis – Build a Living World
+
+The base system of Project Orbis already exists.
+
+Entities can:
+
+* move
+* fly
+* attack
+* take damage
+* heal
+
+However, the system is incomplete.
+
+Your task is to extend it into a **working world simulation**.
+
+---
+
+# Objective
+
+Design a system where:
+
+Entities + Abilities + Environments interact consistently and extensibly
+
+You must build on the given system. Do not rewrite everything.
+
+---
+
+# 1. Environment System (Mandatory)
+
+Create:
+
+```java
+abstract class Environment {
+    String name;
+    abstract void affect(Entity e);
+}
+```
+
+Implement:
+
+* WaterRegion
+
+  * If entity implements Swimming → survives
+  * Otherwise → loses health
+
+* FireRegion
+
+  * If entity implements Burnable → call burn()
+  * Otherwise → takes damage
+
+---
+
+# 2. Abilities (Interfaces)
+
+You must implement:
+
+* Swimming
+* Burnable
+
+Plus at least TWO from:
+
+* Defendable
+* FastMovable
+* Invisible
+* AIControlled
+* Interactable
+
+All must be meaningfully used.
+
+---
+
+# 3. Entities (Mandatory)
+
+Implement:
+
+* Knight
+* Archer
+* SeaSerpent
+* Arrow (non-living)
+* HealingFountain (non-living)
+
+Each must interact correctly with environments and abilities.
+
+---
+
+# 4. GameEngine Upgrade
+
+Add:
+
+```java
+void applyEnvironment(Environment env, Entity e);
+void processAttack(Attacking a, Attackable b);
+void processHealing(Healing h, Attackable target);
+```
+
+The engine must use interfaces only.
+
+---
+
+# 5. REQUIRED INTERACTION RULES (New)
+
+You must clearly define and implement:
+
+* What happens when:
+
+  * an entity that cannot swim enters water
+  * an entity that cannot burn enters fire
+  * a non-living entity (like Arrow) takes damage
+  * a healing action targets different types
+
+Your system must behave consistently.
+
+---
+
+# 6. STRESS TEST SCENARIO (Mandatory)
+
+Your simulation MUST include ALL of the following:
+
+* A non-swimmer entering WaterRegion
+* A Burnable entity entering FireRegion
+* An Arrow interacting with another entity
+* A healing action on at least two different types
+* A combat interaction involving at least three entities
+* At least one entity reaching zero health
+
+If your design breaks here, it is incorrect.
+
+---
+
+# 7. Forbidden Design Patterns
+
+You must NOT use:
+
+* instanceof checks for concrete classes (e.g., Mage, Knight)
+* hardcoded interaction logic
+* a single “god class” handling everything
+
+---
+
+# Deliverables
+
+* Full code
+* 5–10 lines explaining:
+
+  * your design decisions
+  * how you handled edge cases
+* Output of your simulation
+
+---
+
+# Final Note
+
+You are not being evaluated on how much you implement.
+
+You are being evaluated on:
+
+* how well your system handles interaction
+* how easily it can be extended
+
+A weak design will pass simple cases and fail complex ones.
+
+A strong design will handle both without modification.
